@@ -33,8 +33,8 @@ No Graph API, no admin consent, no prompts, no clicking.
    A macOS notification says where it went and why.
 
 ## The app
-`~/Applications/Teams Transcripts.app` is a menu bar app with no Dock icon. The icon shows its state:
-📝 watching, 🎙 in a meeting, ⏳ fetching, ⏸ paused. The menu has:
+`~/Applications/Teams Transcripts.app` is a menu bar app with no Dock icon. Its icon changes to show
+whether it's watching, in a meeting, fetching or paused. The menu has:
 - **Pause / Resume**: stops watching and fetching (remembered across restarts)
 - **Only Fetch When I'm Away** (on by default) and **File Waiting Meetings Now**
 - **File a Past Meeting…**: type a meeting name to fetch and file it now
