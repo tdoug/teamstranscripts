@@ -1,0 +1,3 @@
+rumps>=0.4
+pyobjc-framework-ApplicationServices
+pyobjc-framework-Quartz
