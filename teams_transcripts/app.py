@@ -95,7 +95,14 @@ def run_app(cfg):
     if not service.single_instance():
         service.notify("Already running", "Teams Transcripts is in the menu bar")
         return
-    NSApplication.sharedApplication().setActivationPolicy_(NSApplicationActivationPolicyAccessory)
     svc = service.Service(cfg)
     svc.start()
-    TranscriptsApp(svc).run()
+    app = TranscriptsApp(svc)
+
+    # Hide the Dock icon once launched; doing it before launch also hides the menu bar icon.
+    def hide_dock_icon(timer):
+        NSApplication.sharedApplication().setActivationPolicy_(NSApplicationActivationPolicyAccessory)
+        timer.stop()
+
+    rumps.Timer(hide_dock_icon, 0.5).start()
+    app.run()
